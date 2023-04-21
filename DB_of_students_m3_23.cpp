@@ -21,16 +21,53 @@ struct StudentNode
 	string faculty;
 	string department;
 	string group;
-	string recordÑardNumber;
+	string recordCardNumber;
 	string birthDateString;
-	bool sex; // true - malchik
-	// false - devochka
+	bool sex; // true - malchik // false - devochka
 	int startYear;
 	ExamsRecords examsRecordsData[9][10];
-	StudentNode* next;
-	int id;
 	double avrMarks;
 };
+
+void addStudent()
+{
+	StudentNode s;
+	s.surName = "Сафин";
+	s.name = "Гитлер";
+	s.middleName = "Мерсович";
+	s.faculty = "Информационная безопасность";
+	s.department = "ИКБ";
+	s.group = "БАСО-02-22";
+	s.recordCardNumber = "СБС86";
+	s.birthDateString = "20 апреля 1889";
+	s.sex = true; // true - malchik // false - devochka
+	s.startYear=2022;
+	s.examsRecordsData[0][0].name = "Физика";
+	s.examsRecordsData[0][0].mark = 3;	
+	s.examsRecordsData[0][1].name = "Языки программирования";
+	s.examsRecordsData[0][1].mark = 3;
+	s.examsRecordsData[0][2].name = "Математика";
+	s.examsRecordsData[0][2].mark = 3;
+	s.examsRecordsData[0][3].name = "Математический анализ";
+	s.examsRecordsData[0][3].mark = 5;
+	s.examsRecordsData[0][4].name = "История";
+	s.examsRecordsData[0][4].mark = 2;
+	FILE* textFile;
+	fopen_s(&textFile, "textFile.txt", "w+");
+
+	fprintf(textFile, "%s \n%s \n%s \n%s \n%s \n%s \n%s \n%d", \
+		s.surName, \
+		s.name,\
+		s.middleName,\
+		s.faculty,\
+		s.department,\
+		s.group,\
+		s.recordCardNumber,\
+		s.birthDateString,\
+		s.sex,\
+		s.startYear);
+	fclose(textFile);
+}
 
 
 int main()
@@ -53,6 +90,9 @@ int main()
 		cin >> selectedItem;
 		switch (selectedItem){
 		case 0:
+			break;		
+		case 1:
+			addStudent();
 			break;
 		default:
 			cout << "Выход из курсовой работы" << "\n";
