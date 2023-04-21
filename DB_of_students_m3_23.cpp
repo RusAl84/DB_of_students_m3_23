@@ -55,7 +55,7 @@ void addStudent()
 	FILE* textFile;
 	fopen_s(&textFile, "textFile.txt", "w+");
 
-	fprintf(textFile, "%s \n%s \n%s \n%s \n%s \n%s \n%s \n%d", \
+	fprintf(textFile, "%S \n%s \n%s \n%s \n%s \n%s \n%s \n%d", \
 		s.surName, \
 		s.name,\
 		s.middleName,\
