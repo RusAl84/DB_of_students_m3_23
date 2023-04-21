@@ -48,7 +48,7 @@ int main()
 		cout << "0 - выйти из программы" << endl;
 		cout << "1 - добавить данные о студенте" << endl;
 		cout << "2 - вывести данные о студентах" << endl;
-
+		cout << "3 - Выполнить задание" << endl;
 		cout << "Введите цифру для выбора действия" << endl;
 		cin >> selectedItem;
 		switch (selectedItem){
